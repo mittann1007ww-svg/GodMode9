@@ -27,7 +27,7 @@ static void SetNotificationLED(u32 period_ms, u32 rgb565_color)
 // separate things - hopefully LTO won't get in the way
 u32 HID_ReadState(void)
 {
-    return ARM_GetSHMEM()->hidState.keys;
+    return ARM_GetSHMEM()->hidState.keys & ~BUTTON_START;
 }
 
 u32 HID_ReadRawTouchState(void)
